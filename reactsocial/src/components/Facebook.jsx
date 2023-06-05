@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import FacebookLogin from 'react-facebook-login';
 
+
 export class Facebook extends Component {
     state = {
         isLoggedIn:  false,
@@ -17,9 +18,10 @@ export class Facebook extends Component {
     componentClicked = () => console.log('clicked')
 
   render() {
+    // eslint-disable-next-line no-unused-vars
     let fbContent;
     if (this.state.isLoggedIn) {
-        //
+        fbContent = null
     } else {
         fbContent = (
             <FacebookLogin 
@@ -34,7 +36,7 @@ export class Facebook extends Component {
 
     return (
       <div>
-        hi
+        {fbContent}
       </div>
     );
   }
