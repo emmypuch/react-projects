@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <h1>Facebook auth example</h1>
+        <h1>Facebook authentication example</h1>
         <p>To get started, authenticate with facebook</p>
         <Facebook />
       </header>
