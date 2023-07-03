@@ -4,6 +4,7 @@ import { GlobalContext } from "../context/GlobalState";
 export const AddTransaction = () => {
   const [text, subText] = useState("");
   const [amount, subAmount] = useState(0);
+  const [clearInput, setClearInput] = useState(false);
 
   const { addTransaction } = useContext(GlobalContext);
 
@@ -17,6 +18,13 @@ export const AddTransaction = () => {
     };
 
     addTransaction(newTransaction);
+    setClearInput(true);
+  };
+
+  const clearFields = () => {
+    subText("");
+    subAmount(0);
+    setClearInput(false);
   };
 
   return (
@@ -27,7 +35,7 @@ export const AddTransaction = () => {
           <label htmlFor="text">Text</label>
           <input
             type="text"
-            value={text}
+            value={clearInput ? "" : text}
             onChange={(e) => subText(e.target.value)}
             placeholder="Enter text..."
           />
@@ -38,12 +46,14 @@ export const AddTransaction = () => {
           </label>
           <input
             type="number"
-            value={amount}
+            value={clearInput ? 0 : amount}
             onChange={(e) => subAmount(e.target.value)}
             placeholder="Enter amount..."
           />
         </div>
-        <button className="btn">Add Transaction</button>
+        <button className="btn" onClick={clearFields}>
+          Add Transaction
+        </button>
       </form>
     </>
   );
