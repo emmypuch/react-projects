@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
 :root {
     --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
@@ -6,47 +6,66 @@
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
-    background-color: #f7f7f7;
+    background-color: #f6f6fb;
+    /* background-color: #f7f7f7; */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
     margin: 0;
-    font-family: 'Lato', sans-serif;
 }
 
 .container {
     margin: 30px auto;
     width: 350px;
+    background-color: #372a79;
+    padding: 10px 30px;
+    border-radius: 5px;
 }
 
 h1 {
     letter-spacing: 1px;
     margin: 0;
+    color: #f6f6fb;
+}
+
+h2 {
+    color: #453498;
+    text-align: center;
+    font-size: 1.7rem;
+    margin-top: 5px;
 }
 
 h3 {
     border-bottom: 1px solid #bbb;
     padding-bottom: 10px;
     margin: 40px 0 10px;
+    color: #f6f6fb;
+    font-size: 1.2rem;
 }
 
 h4 {
     margin: 0;
     text-transform: uppercase;
+    color: #9898e2;
+    font-size: 0.7rem;
 }
 
 .inc-exp-container {
-    background-color: #fff;
+    background-color: #f6f6fb;
     box-shadow: var(--box-shadow);
     padding: 20px;
     display: flex;
     justify-content: space-between;
     margin: 20px 0;
+    border-radius: 3px;
 }
 
 .inc-exp-container>div {
@@ -75,6 +94,9 @@ h4 {
 label {
     display: inline-block;
     margin: 10px 0;
+    color: #f6f6fb;
+    font-size: 0.9rem;
+    padding-top: 5px;
 }
 
 input[type='text'],
@@ -85,11 +107,13 @@ input[type='number'] {
     font-size: 16px;
     padding: 10px;
     width: 100%;
+    outline: none;
+    color: #453498;
 }
 
 .btn {
     cursor: pointer;
-    background-color: #9c88ff;
+    background-color: #6956c8;
     box-shadow: var(--box-shadow);
     color: #fff;
     border: 0;
@@ -98,6 +122,11 @@ input[type='number'] {
     margin: 10px 0 30px;
     padding: 10px;
     width: 100%;
+}
+
+.btn:hover {
+    background-color: #9c88ff;
+    transition: background-color 0.5s ease;
 }
 
 .btn:focus,
@@ -123,16 +152,16 @@ input[type='number'] {
 }
 
 .list li.plus {
-    border-right: 5px solid #2ecc71;
+    border-right: 5px solid #1fa356;
 }
 
 .list li.minus {
-    border-right: 5px solid #c0392b;
+    border-right: 5px solid #ae1f10;
 }
 
 .delete-btn {
     cursor: pointer;
-    background-color: #e74c3c;
+    background-color: #ae1f10;
     border: 0;
     color: #fff;
     font-size: 20px;
