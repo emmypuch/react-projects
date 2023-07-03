@@ -2,9 +2,8 @@ import React, { useState, useContext } from "react";
 import { GlobalContext } from "../context/GlobalState";
 
 export const AddTransaction = () => {
-  const [text, subText] = useState("");
-  const [amount, subAmount] = useState(0);
-  const [clearInput, setClearInput] = useState(false);
+  const [text, setText] = useState("");
+  const [amount, setAmount] = useState(0);
 
   const { addTransaction } = useContext(GlobalContext);
 
@@ -17,14 +16,12 @@ export const AddTransaction = () => {
       amount: +amount,
     };
 
+    // Adding transaction
     addTransaction(newTransaction);
-    setClearInput(true);
-  };
 
-  const clearFields = () => {
-    subText("");
-    subAmount(0);
-    setClearInput(false);
+    // Reset the input fields
+    setText("");
+    setAmount(0);
   };
 
   return (
@@ -35,8 +32,8 @@ export const AddTransaction = () => {
           <label htmlFor="text">Text</label>
           <input
             type="text"
-            value={clearInput ? "" : text}
-            onChange={(e) => subText(e.target.value)}
+            value={text}
+            onChange={(e) => setText(e.target.value)}
             placeholder="Enter text..."
           />
         </div>
@@ -46,14 +43,12 @@ export const AddTransaction = () => {
           </label>
           <input
             type="number"
-            value={clearInput ? 0 : amount}
-            onChange={(e) => subAmount(e.target.value)}
+            value={amount}
+            onChange={(e) => setAmount(e.target.value)}
             placeholder="Enter amount..."
           />
         </div>
-        <button className="btn" onClick={clearFields}>
-          Add Transaction
-        </button>
+        <button className="btn">Add Transaction</button>
       </form>
     </>
   );
